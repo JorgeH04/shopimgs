@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Images</title>
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+
+    <%- include("partials/navigation") %>
+
+
+    <div class="about container mt-5">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 style="color: dodgerblue">About Us</h1>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="img/beard-chair-computer-840996.jpg" alt="img">
+                </div>
+                
+                <div class="col-md-6">
+                    <p style="margin: 0px 10px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi perferendis perspiciatis nisi, temporibus ab illum nemo rem nam vero odit autem cupiditate architecto dolorem, consequuntur neque, voluptatum voluptate aspernatur quae.<br/>
+           Lorem ipsum dolor sit amet, jf fhf sjf jf tetur adipisicing elit. Natus assumenda culpa repudiandae magni! Maxime voluptatum repellendus in rerum, unde incidunt commodi quibusdam quaerat eligendi nostrum, aliquid saepe aut sit velit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda culpa repudiandae magni! Maxime voluptatum repellendus in rerum, unde incidunt commodi quibusdam quaerat eligendi nostrum, aliquid saepe aut sit velit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda culpa repudiandae magni! Maxime voluptatum repellendus in rerum, unde incidunt commodi quibusdam quaerat eligendi nostrum, aliquid saepe aut sit velit.quibusdam quaerat eligendi nostrum, aliquid saepe aut sit velit.</p>
+                </div>
+            </div>
+        </div>    
+
+        <div class="container mt-5">
+                   
+            <div class="row">
+              <h3>OFERTA DE VERANO</h3>
+            </div>
+              <div class="row">
+              <div class="underline"></div>
+            </div>
+          </div>
+
+
+    <div class="container p-4">
+            <div class="card mt-2">
+                <div class="card-body">
+                 <div class="row">
+                    <% images.forEach(function (image) { %>
+                        <div class="col-md-4 text-center">
+
+                        <img src="<%= image.path %>" class="card-img-top" alt="<%= image.filename %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= image.product %></h5>
+                            <p class="card-text"><%= image.price %></p>
+                            <p><%= format(image.created_at) %></p>
+                            <a href="/image/<%= image._id %>" class="btn btn-primary">
+                               View 
+                            </a>
+                            
+                    </div>
+                </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    
+    </html>

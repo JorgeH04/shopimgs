@@ -1,0 +1,23 @@
+
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <% images.forEach(function (imagen) { %>
+                <div class="card animated fadeInDown">
+                    <img src="<%= image.path %>" class="card-img-top" alt="<%= image.filename %>">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= imagen.product %>
+                        </h5>
+                        <p class="card-text">
+                            <%= imagen.price %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+    </div>
+
